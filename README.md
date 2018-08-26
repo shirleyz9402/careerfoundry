@@ -1,7 +1,7 @@
 # careerfoundry
 Frontend Code Challenge
 
-#Given more time...
+# Given more time...
 
 -I would implement react router to change the address based on slug corresponding to the course selected
 -Play around more with the styling both css and bootstrap to make it more aesthetically appealing
