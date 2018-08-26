@@ -15,8 +15,6 @@ export default class Course extends React.Component{
       prices: r.price[this.props.location]}))
   }
   render(){
-    console.log(this.state)
-    console.log(this.props)
     const renderDates = this.state.startDates.slice(0,3).map(date => {
       return (
         <div id={date}>
@@ -27,7 +25,7 @@ export default class Course extends React.Component{
     return(
       <div>
       <h1>{this.props.selectedCourse.title}</h1>
-      <div className="course-details">
+      <div class="container-fluid" className="course-details">
           <div className="start-date">
             <h2>Start Dates:</h2>
             {renderDates}
@@ -39,7 +37,7 @@ export default class Course extends React.Component{
                <p><strong>Upfront Savings</strong> : {this.state.prices.upfront_savings}</p>
           </div>
       </div>
-      <button onClick={this.props.handleBack}>Back</button>
+      <button type="button" class="btn btn-primary" onClick={this.props.handleBack}>Back</button>
       </div>
     )
   }

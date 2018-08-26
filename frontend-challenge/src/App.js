@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Course from './Course.js'
+import Course from './Course'
 
 const IPLink = 'http://api.ipstack.com/check?access_key=df3b805c8ac6ed141ca9e04658cb8917'
 
@@ -30,18 +30,19 @@ class App extends Component {
       return "NA"
     }
   }
-  handleClick = (course) => {
-    console.log(course)
+  handleClick = course => {
     this.setState({selectedCourse: course})
+  }
+  handleBack = () => {
+    this.setState({selectedCourse: null})
   }
 
   render() {
-    console.log(this.state)
     const renderCourses = this.state.courses.map(course =>{
       return(
         <div className="course" id={course.title} value={course} onClick={(event) => this.handleClick(course)}>
-          <button>
-            <p>{course.title}</p>
+          <button type="button" class="btn btn-primary responsive-width container-fluid">
+            <p class="lead responsive-width">{course.title}</p>
             <p>View Course Details</p>
           </button>
         </div>
@@ -49,8 +50,11 @@ class App extends Component {
     })
     return (
       <div>
+      <nav class="navbar">
+        <p class="navbar-brand">CAREER<strong>FOUNDRY</strong></p>
+      </nav>
         <div className="App">
-          {this.state.selectedCourse ? <Course selectedCourse= {this.state.selectedCourse} handleBack={this.handleBack} location={this.setLocation()}/> : <div className="courses"> {renderCourses} </div>}
+          {this.state.selectedCourse ? <Course selectedCourse= {this.state.selectedCourse} handleBack={this.handleBack} location={this.setLocation()}/> : <div class="container-fluid" className="courses"> {renderCourses} </div>}
         </div>
       </div>
     );
