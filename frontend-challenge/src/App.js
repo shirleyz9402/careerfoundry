@@ -54,7 +54,20 @@ class App extends Component {
         <p class="navbar-brand">CAREER<strong>FOUNDRY</strong></p>
       </nav>
         <div className="App">
-          {this.state.selectedCourse ? <Course selectedCourse= {this.state.selectedCourse} handleBack={this.handleBack} location={this.setLocation()}/> : <div class="container-fluid" className="courses"> {renderCourses} </div>}
+          {this.state.selectedCourse ?
+            <Course selectedCourse= {this.state.selectedCourse} handleBack={this.handleBack} location={this.setLocation()}/> :
+            <div>
+              <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                  <h1 class="display-4">UX, UI, and Web Development Courses Online</h1>
+                  <p class="lead">Learn in-demand skills today and change your career</p>
+                </div>
+              </div>
+              <div class="container-fluid" className="courses">
+                {renderCourses}
+              </div>
+            </div>
+          }
         </div>
       </div>
     );

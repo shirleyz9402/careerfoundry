@@ -24,20 +24,24 @@ export default class Course extends React.Component{
     })
     return(
       <div>
-      <h1>{this.props.selectedCourse.title}</h1>
-      <div class="container-fluid" className="course-details">
-          <div className="start-date">
-            <h2>Start Dates:</h2>
-            {renderDates}
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">{this.props.selectedCourse.title}</h1>
           </div>
-          <div id="price">
-            <h2>Price:</h2>
-               <p><strong>All Upfront</strong> : {this.state.prices.all_upfront}</p>
-               <p><strong>Installments</strong>: {this.state.prices.upfront} with {this.state.prices.cycles} payments of {this.state.prices.installment} ({this.state.prices.total} total)</p>
-               <p><strong>Upfront Savings</strong> : {this.state.prices.upfront_savings}</p>
-          </div>
-      </div>
-      <button type="button" class="btn btn-primary" onClick={this.props.handleBack}>Back</button>
+        </div>
+        <div class="container-fluid" className="course-details">
+            <div className="start-date">
+              <p class="lead">Start Dates:</p><br/>
+              {renderDates}
+            </div>
+            <div id="price">
+              <p class="lead">Price:</p><br/>
+                 <p>All Upfront : {this.state.prices.all_upfront}</p>
+                 <p>Installments: {this.state.prices.upfront} with {this.state.prices.cycles} payments of {this.state.prices.installment} ({this.state.prices.total} total)</p>
+                 <p>Upfront Savings : {this.state.prices.upfront_savings}</p>
+            </div>
+        </div>
+        <button id="back" type="button" class="btn btn-primary" onClick={this.props.handleBack}>Back</button>
       </div>
     )
   }
