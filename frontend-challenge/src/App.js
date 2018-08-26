@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Course from './Course.js'
 
 const IPLink = 'http://api.ipstack.com/check?access_key=df3b805c8ac6ed141ca9e04658cb8917'
 
